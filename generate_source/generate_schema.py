@@ -202,8 +202,8 @@ def make_widget(widget_data):
 def generate_schema(materialui_api_file_name, base_schema_file_name, schema_output_file_name):
     global mapped_by_name_json
 
-    api_data = json.loads(open(materialui_api_file_name).read())
-    base_schema = json.loads(open(base_schema_file_name).read()) if base_schema_file_name \
+    api_data = json.loads(open(materialui_api_file_name, encoding='utf8', errors='ignore').read())
+    base_schema = json.loads(open(base_schema_file_name, encoding='utf8', errors='ignore').read()) if base_schema_file_name \
         else {'widgets': {}}
 
     mapped_by_name_json = dict([(comp['name'], comp) for comp in api_data])
