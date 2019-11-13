@@ -5,7 +5,7 @@ import fileinput
 import json
 from .generate_schema import generate_schema
 
-here = os.path.dirname(os.path.abspath(__file__))
+here = os.path.dirname(os.path.abspath(__file__)).replace("\\","/")
 base_schema = f'{here}/base.json'
 build_dir = f'{here}/build'
 materialui_core_api = f'{build_dir}/core_api.json'
